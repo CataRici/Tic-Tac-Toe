@@ -33,8 +33,8 @@ bool checkTablePosition(int r, int c) {
 
 // Function which checks if there is a winner
 bool checkWinner() {
-    vector<string> symbol1;
-    vector<string> symbol2;
+    vector<string> symbol1(MAX_SIZE);
+    vector<string> symbol2(MAX_SIZE);
     for (int i = 1; i < MAX_SIZE; ++i) {
         for (int j = 1; j < MAX_SIZE; ++j) {
             symbol1[j] = table[i][j]; // Move symbol from row into vector
@@ -58,37 +58,7 @@ bool checkWinner() {
         return true;
     }
     return false;
-    
-
-    /*
-   if (table[1][1] != "_" && ((table[1][1] == table[1][2]) && (table[1][2] == table[1][3]))) {
-        return true;
-    }
-    else if (table[2][1] != "_" && ((table[2][1] == table[2][2]) && (table[2][2] == table[2][3]))) {
-        return true;
-    }
-    else if (table[3][1] != "_" && ((table[3][1] == table[3][2]) && (table[3][2] == table[3][3]))) {
-        return true;
-    }
-    else if (table[1][1] != "_" && ((table[1][1] == table[2][1]) && (table[2][1] == table[3][1]))) {
-        return true;
-    }
-    else if (table[1][2] != "_" && ((table[1][2] == table[2][2]) && (table[2][2] == table[3][2]))) {
-        return true;
-    }
-    else if (table[1][3] != "_" && ((table[1][3] == table[2][3]) && (table[2][3] == table[3][3]))) {
-        return true;
-    }
-    else if (table[1][1] != "_" && ((table[1][1] == table[2][2]) && (table[2][2] == table[3][3]))) {
-        return true;
-    }
-    else if (table[1][3] != "_" && ((table[1][3] == table[2][2]) && (table[2][2] == table[3][1]))) {
-        return true;
-    }
-    return false;
-    */
 }
-
 
 int main() {
     string Player1, Player2;
